@@ -9,7 +9,7 @@ export const App = ({ darkModeDefault = false }) => {
   const dispatch = useDispatch();
 
   const [darkMode, setDarkMode] = useState(darkModeDefault);
-
+  /** eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     dispatch(fetchProjects());
   }, []);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { generatePushId } from '../helpers';
 import { projectSubmit } from '../constants';
@@ -8,7 +8,6 @@ import { axios } from '../helpers/axios';
 import { setProjects } from '../reducer';
 
 export const AddProject = ({ shouldShow = false }) => {
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const [show, setShow] = useState(shouldShow);

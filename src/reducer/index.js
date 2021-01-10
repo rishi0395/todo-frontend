@@ -65,7 +65,7 @@ const reducer = (state = initialState, action) => {
     case MODIFY_TASK: {
       const { payload } = action;
       let stateTasks = state.tasks;
-      let foundIndex = stateTasks.findIndex((ele) => ele._id == payload._id);
+      let foundIndex = stateTasks.findIndex((ele) => ele._id === payload._id);
       stateTasks[foundIndex] = payload;
 
       return {

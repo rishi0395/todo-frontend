@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaRegListAlt, FaRegCalendarAlt } from 'react-icons/fa';
+import { FaRegListAlt } from 'react-icons/fa';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -18,11 +18,9 @@ export const AddTask = ({
   const dispatch = useDispatch();
 
   const [task, setTask] = useState('');
-  const [taskDate, setTaskDate] = useState('');
   const [project, setProject] = useState('');
   const [showMain, setShowMain] = useState(shouldShowMain);
   const [showProjectOverlay, setShowProjectOverlay] = useState(false);
-  const [showTaskDate, setShowTaskDate] = useState(false);
 
   const { selectedProject } = state;
 
@@ -44,7 +42,7 @@ export const AddTask = ({
           archived: false,
           projectId,
           task,
-          date: collatedDate || taskDate,
+          date: collatedDate,
           userId: '1234',
         })
         .then((res) => {

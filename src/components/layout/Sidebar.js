@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { FaChevronDown, FaInbox } from 'react-icons/fa';
 import { Projects } from '../Projects';
 import { AddProject } from '../AddProject';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { AiFillCheckSquare } from 'react-icons/ai';
 import { setSelectedProject } from '../../reducer';
 
 export const Sidebar = () => {
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const [active, setActive] = useState('inbox');
   const [showProjects, setShowProjects] = useState(true);
